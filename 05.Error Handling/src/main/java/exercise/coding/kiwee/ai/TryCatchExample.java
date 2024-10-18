@@ -1,19 +1,22 @@
 package exercise.coding.kiwee.ai;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 public class TryCatchExample {
 
-	public static void read() {
+	public static void read() throws FileNotFoundException {
 		var f = new File("doesnotexist");
 		var reader = new FileReader(f);
 	}
 
-	public static void network() {
+	public static void network() throws URISyntaxException, IOException {
 		URL url = new URI("http://example.com").toURL();
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		connection.connect();
